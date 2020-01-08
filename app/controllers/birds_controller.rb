@@ -2,6 +2,8 @@ class BirdsController < ApplicationController
   def index
     birds = Bird.all
     render json: birds, only: [:id, :name, :species]
+    # OR
+    # render json: birds, except: [:created_at, :updated_at]
   end
 
   def show
